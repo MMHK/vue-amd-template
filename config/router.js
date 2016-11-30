@@ -26,103 +26,6 @@ define('config/router', ['vue', 'vue-router', 'service/bus'], function (Vue, Vue
       component: function (resolve) {
         require(['page/home'], resolve)
       }
-    },
-    'search': {
-      component: function (resolve) {
-        require(['page/search'], resolve)
-      }
-    },
-    'brand/:brand_id': {
-      component: function (resolve) {
-        require(['page/brand'], resolve)
-      }
-    },
-    'detail/:post_id': {
-      component: function (resolve) {
-        require(['page/post'], resolve)
-      }
-    },
-    'profile': {
-      component: function (resolve) {
-        require(['page/profile'], resolve)
-      },
-      subRoutes: {
-        '/': {
-          component: function (resolve) {
-            require(['page/profile-home'], resolve)
-          }
-        }
-      }
-    },
-    'profile/edit': {
-      component: function (resolve) {
-        require(['page/profile-edit'], resolve)
-      }
-    },
-    'basic_login': {
-      component: function (resolve) {
-        require(['page/basic_login'], resolve)
-      }
-    },
-    'share_box': {
-      component: function (resolve) {
-        require(['page/share-box'], resolve)
-      }
-    },
-    'alogin_share': {
-      component: function (resolve) {
-        require(['page/alogin-share'], resolve)
-      }
-    },
-    'intro': {
-      component: function (resolve) {
-        require(['page/intro'], resolve)
-      }
-    },
-    'intro_shop': {
-      component: function (resolve) {
-        require(['page/intro-shop'], resolve)
-      }
-    },
-    'invite_frd': {
-      component: function (resolve) {
-        require(['page/invite-frd'], resolve)
-      }
-    },
-    'invite_shop': {
-      component: function (resolve) {
-        require(['page/invite-shop'], resolve)
-      }
-    },
-    'shop_form': {
-      component: function (resolve) {
-        require(['page/shop-form'], resolve)
-      }
-    },
-    'setting': {
-      component: function (resolve) {
-        require(['page/setting'], resolve)
-      }
-    },
-    'login_start': {
-      component: function (resolve) {
-        require(['page/login-start'], resolve)
-      }
-    },
-    'term_policy': {
-      component: function (resolve) {
-        require(['page/term_policy'], resolve)
-      }
-    },
-    'login_share': {
-      component: function (resolve) {
-        require(['page/login-share'], resolve)
-      }
-    },
-    'withdraw': {
-      component: function (resolve) {
-        require(['page/withdraw'], resolve)
-      }
     }
   })
 
@@ -134,7 +37,6 @@ define('config/router', ['vue', 'vue-router', 'service/bus'], function (Vue, Vue
      * 触发关闭右侧菜单
      */
     Bus.$emit('nav.change', false)
-    window.scrollTo(0, 0)
   })
 
   return router
