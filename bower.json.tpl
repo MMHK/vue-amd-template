@@ -15,7 +15,9 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "package.json",
+    "src"
   ],
   "dependencies": {
     "vue": "^1.0.26",
