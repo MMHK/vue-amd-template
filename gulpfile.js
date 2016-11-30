@@ -20,7 +20,7 @@ var getAMDModule = function(globlist) {
     });
     
     list = list.map(function(item){
-        return path.relative("../", item).replace(".js", "").replace(path.sep, "/");
+        return path.relative("./", item).replace(".js", "").replace(path.sep, "/");
     });
     
     return list;
@@ -34,47 +34,47 @@ gulp.task('css', function () {
             autoprefixer: false,
         }),
     ];
-    return gulp.src(['../lib/normalize-css/normalize.css', 
-            '../lib/vue-swipe/dist/vue-swipe.css',
-            '../lib/vue-components/dist/materializecss-lite.css',
-            '../lib/vue-components/dist/vue-material-components.css',
-            '../lib/vue-components/dist/md-fix.css',
-            '../css/common.css',
-            '../component/*.css',
-            '../page/*.css'    
+    return gulp.src(['./lib/normalize-css/normalize.css', 
+            './lib/vue-swipe/dist/vue-swipe.css',
+            './lib/vue-components/dist/materializecss-lite.css',
+            './lib/vue-components/dist/vue-material-components.css',
+            './lib/vue-components/dist/md-fix.css',
+            './css/common.css',
+            './component/*.css',
+            './page/*.css'    
         ])
         .pipe(sourcemaps.init({largeFile: true}))
         .pipe(postcss(processors))
         .pipe(concat('main.min.css'))
         .pipe(sourcemaps.write("./"))
-        .pipe(gulp.dest('../css/'));
+        .pipe(gulp.dest('./css/'));
 });
 
 gulp.task("asset-img", function(){
     return gulp.src([
-        '../images/**/*'
+        './images/**/*'
     ])
-        .pipe(gulp.dest('../dist/images/'));
+        .pipe(gulp.dest('./dist/images/'));
 });
 
 gulp.task("asset-css", ['css'],function(){
     return gulp.src([
-        '../css/*'
+        './css/*'
     ])
-    .pipe(gulp.dest('../dist/css/'));
+    .pipe(gulp.dest('./dist/css/'));
 });
 
 gulp.task("html", function(){
-    return gulp.src(['../index.html'])
+    return gulp.src(['./index.html'])
         .pipe(htmlreplace({
             'css': 'css/main.min.css',
             'js': 'js/main.min.js'
         }))
-        .pipe(gulp.dest('../dist/'));
+        .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task("rjs" , function(){
-    global.BASE_PATH = '../';
+    global.BASE_PATH = './';
     global.requirejs = {
         config : function(options) {
             rjsConfig = Object.assign({
@@ -88,12 +88,12 @@ gulp.task("rjs" , function(){
             }, options);
         }
     };
-    require("../config/config.js");
+    require("./config/config.js");
     global.requirejs = undefined;
     global.BASE_PATH = undefined;
     rjsConfig.include = getAMDModule([
-        "../page/*.js",
-        "../main.js"
+        "./page/*.js",
+        "./main.js"
     ]);
     rjsConfig.map = {
         '*' : {
@@ -101,31 +101,31 @@ gulp.task("rjs" , function(){
         },
         buildCSS: false
     }; 
-    return gulp.src(['../main.js'])
+    return gulp.src(['./main.js'])
         .pipe(sourcemaps.init())
         .pipe(rjs(rjsConfig))
         .pipe(sourcemaps.write("./"))
-        .pipe(gulp.dest('../dist/js/'));;
+        .pipe(gulp.dest('./dist/js/'));;
 });
 
 gulp.task("js", ["rjs"],function(){
-    return gulp.src(['../lib/requirejs/require.js', 
-            '../config/config.js',
-            '../dist/js/modules.js'
+    return gulp.src(['./lib/requirejs/require.js', 
+            './config/config.js',
+            './dist/js/modules.js'
         ])
         .pipe(replace("lib/require-css/css.min", "lib/require-css/r-css-pro"))
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(concat('main.min.js'))
         .pipe(uglify())
         .pipe(sourcemaps.write("./"))
-        .pipe(gulp.dest('../dist/js/'));
+        .pipe(gulp.dest('./dist/js/'));
 });
 
 gulp.task("watch-css", function(){
     gulp.watch([
-        '../css/common.css',
-        '../component/*.css',
-        '../page/*.css'   
+        './css/common.css',
+        './component/*.css',
+        './page/*.css'   
     ], ["asset-css"]);
 })
 
