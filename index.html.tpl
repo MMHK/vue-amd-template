@@ -24,12 +24,8 @@
 </head>
 
 <body>
-    <div id="App" class="jetso">
+    <div id="App">
         <router-view></router-view>
-        <div v-if="NavOpen" class="mask"></div>
-        <right-nav v-if="NavOpen" @click="closeNav"></right-nav>
-        <bottom-bar></bottom-bar>
-        </bottom-bar>
     </div>
 </body>
 <!-- build:js -->
