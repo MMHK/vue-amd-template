@@ -95,6 +95,11 @@ gulp.task("rjs", function () {
         "./page/*.js",
         "./main.js"
     ]);
+    rjsConfig.separateCSS = true
+    //   rjsConfig.buildCSS = false
+    rjsConfig.pragmasOnSave = {
+        excludeRequireCss: true
+    }
     return gulp.src(['./main.js'])
         .pipe(sourcemaps.init())
         .pipe(rjs(rjsConfig))
