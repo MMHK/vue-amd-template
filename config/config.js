@@ -10,8 +10,8 @@ requirejs.config({
         "vue-router": "lib/vue-router/dist/vue-router.min",
         "vue-resource": "lib/vue-resource/dist/vue-resource.min",
         "vue-validator": "lib/vue-validator/dist/vue-validator.min",
-        "promise": "lib/promise/promise-6.1.0",
         "lodash": "lib/lodash/dist/lodash.min",
+        "promise": "lib/es6-promise/es6-promise.min",
         "css": "lib/require-css/css.min"
     },
     map: {

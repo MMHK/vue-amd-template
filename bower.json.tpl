@@ -30,6 +30,7 @@
     "html5shiv": "^3.7.3",
     "respond": "^1.4.2",
     "lodash": "^4.14.2",
-    "vue-validator": "^2.1.5"
+    "vue-validator": "^2.1.5",
+    "es6-promise": "^4.0.5"
   }
 }
