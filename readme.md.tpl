@@ -6,17 +6,18 @@
 
 项目尝试根据`AMD规范`布局代码结构，整个项目所有的代码都是`RequireJS`控制下进行封装。`VueJS`部分的依赖如下：
 
-- [vuejs](https://vuejs.org.cn) [参考文档](https://vuejs.org.cn/guide/)
+- [vuejs](http://v1-cn.vuejs.org/) [参考文档](http://v1-cn.vuejs.org/guide/)
 
-- [vue-router](https://github.com/vuejs/vue-router) [参考文档](http://router.vuejs.org/zh-cn/index.html)
+- [vue-router](https://github.com/vuejs/vue-router) [参考文档](http://demo2.mixmedia.com/mvctools/public/docs/vue-router-1.0/)
 
 - [vue-resource](https://github.com/vuejs/vue-resource) [参考文档](http://www.cnblogs.com/keepfool/p/5657065.html)
 
-- [lodash](https://lodash.com) [参考文档](http://lodashjs.com/docs/)
+- [lodash](https://lodash.com) [参考文档](http://www.css88.com/doc/lodash/)
 
-- [vue-validator](https://github.com/vuejs/vue-validator)  [参考文档](http://vuejs.github.io/vue-validator/zh-cn/index.html)
+- [vue-validator](https://github.com/vuejs/vue-validator)  [参考文档](http://demo2.mixmedia.com/mvctools/public/docs/vue-validator-2.1.7)
 
-- [promise](https://www.promisejs.org/) 整个架构中大量使用`Promise`模式，这个是现代`Ajax`的工业标准，请一定要弄清楚。
+- [promise](https://www.promisejs.org/) [参考文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+整个架构中大量使用`Promise`模式，这个是现代`Ajax`的工业标准，请一定要弄清楚。
 
 - [vue-lazyload](https://github.com/hilongjw/vue-lazyload) 懒加载图片
 
@@ -73,9 +74,24 @@ bower install [第三方类库名] --save --production
 
 在新增页面后，请一定要修改此文件增加新页面的路由。
 
+## 初始化编译环境
+
+- 确保你本地机器已经安装最新版的[NodeJS](https://nodejs.org/zh-cn/)
+- 然后执行 `初始化编译环境.cmd`, 非window 用户请使用如下命令：
+```
+npm install gulp-cli vue-amd-cli -g & npm install
+```
+
 ## 项目编译
 
 - 首先，准备好 `nodejs` 环境，没有的自己去安装去。
 - 进入 `.build` 目录， 运行 `npm install`
 - 运行 `gulp default` 或者直接运行 `run.cmd`
 - 运行好了之后，会在 `dist` 目录生成相关的编译文件。
+
+## 项目辅助工具
+
+- 执行 `脚手架.cmd`，非 window 用户请使用如下命令：
+```
+vue-amd-cli
+```
